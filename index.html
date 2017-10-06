@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Generate PDF from url</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+
+    <style media="screen">
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        background-color: #2196F3;
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        font-weight: 300;
+        letter-spacing: 1px;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+      }
+      .page-wrapper {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+      }
+      .page-wrapper-inner {
+        margin-bottom: 60px;
+        width: 560px;
+        max-width: 100%;
+        padding: 30px 15px;
+      }
+      h1 {
+        font-weight: 400;
+        font-size: 36px;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+      }
+      input {
+        width: calc(100% - 120px);
+        font-size: 18px;
+        border: 0;
+        border-radius: 0;
+        padding: 15px;
+      }
+      button {
+        width: 120px;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: 0;
+        border-radius: 0;
+        padding: 15px;
+        color: #fff;
+        background-color: #009688;
+        letter-spacing: 1px;
+        cursor: pointer;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="page-wrapper-inner">
+        <h1>Generate PDF from url!</h1>
+        <form class="" target="_blank" action="/generate-pdf" method="get">
+          <input type="text" name="url" value="">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
