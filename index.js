@@ -13,7 +13,7 @@ app.get('/generate-pdf', function (req, res) {
   const filePath = 'files/' + uuidv4() + '.pdf';
 
   (async () => {
-    const browser = await puppeteer.launch()
+    const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
     const page = await browser.newPage()
     await page.goto(url, {waitUntil: 'networkidle'})
     await page.pdf({path: filePath, format: 'A4'})
