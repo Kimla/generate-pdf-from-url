@@ -16,7 +16,8 @@ app.get('/generate-pdf', function (req, res) {
     const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
     const page = await browser.newPage()
     await page.goto(url, {waitUntil: 'networkidle'})
-    await page.pdf({path: filePath, format: 'A4'})
+    await page.emulateMedia('screen');
+    await page.pdf({path: filePath, format: 'A4', printBackground: true, displayHeaderFooter: true})
 
     await browser.close()
     await res.download(path.join(__dirname + '/' + filePath));
